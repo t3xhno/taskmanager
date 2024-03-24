@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn taskmanager service
+Documentation=man:gunicorn(1)
+After=network.target nss-lookup.target
+
+[Service]
+WorkingDirectory=/var/taskmanager/
+ExecStart=/usr/bin/gunicorn --workers 3 --bind 0.0.0.0:80 run:app
+
+[Install]
+WantedBy=multi-user.target
+

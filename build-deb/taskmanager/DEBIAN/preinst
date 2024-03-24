@@ -1,0 +1,6 @@
+if [ -f /var/taskmanager/taskmanager/config.ini ] ; then
+	cp /var/taskmanager/taskmanager/config.ini /tmp/oldtaskmanagerconfig.ini
+fi
+if [ -f /var/taskmanager/instance/taskmanager.db ] ; then
+	cp /var/taskmanager/instance/taskmanager.db /tmp/oldtaskmanager.db
+fi

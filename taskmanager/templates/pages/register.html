@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+	<main class="container page page-register">
+		<div class="form-wrap">
+			<form action="/register" method="POST">
+				<div class="form-input">
+					<label for="username">Username:</label>
+					<input type="text" name="username" id="username" required />
+				</div>
+				<div class="form-input">
+					<label for="contact">Contact:</label>
+					<input type="text" name="contact" id="contact" required />
+				</div>
+				<div class="form-input">
+					<label for="password">Password:</label>
+					<input type="password" name="password" placeholder="optional" id="password"/>
+				</div>
+				<div class="btn-wrap">
+					<button class="btn">Submit</button>
+				</div>
+			</form>
+		</div>
+	</main>
+{% endblock content %}

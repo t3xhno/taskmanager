@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+	<header>
+		<nav class="container">
+			<ul>
+				<li class="current"><a href="/">Home</a></li>
+				<li><a href="/register">Register</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="container page page-index">
+		<section>
+			<div class="btn">
+				<a href="/addtask">Add new task</a>
+			</div>
+			<div class="tasks-wrap">
+				<h1>Tasks</h1>
+				{% for task in tasks %}
+				<div class="task">
+					<a href="/projects/{{task.id}}"> 
+						<div>{{task.id}}.</div>
+						<div>{{task.name}}</div> 
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</section>
+	</main>
+	<footer>
+	</footer>
+{% endblock content %}

@@ -1,0 +1,12 @@
+#!/bin/sh
+/usr/bin/systemctl enable taskmanager.service
+/var/taskmanager/init_db.py
+/sbin/service taskmanager start
+if [ -f /tmp/oldtaskmanagerconfig.ini ] ; then
+	cp /tmp/oldtaskmanagerconfig.ini /var/taskmanager/taskmanager/config.ini
+	rm /tmp/oldtaskmanagerconfig.ini
+fi
+if [ -f /tmp/oldtaskmanager.db ] ; then
+	cp /tmp/oldtaskmanager.db /var/taskmanager/instance/taskmanager.db
+	rm /tmp/oldtaskmanager.db
+fi

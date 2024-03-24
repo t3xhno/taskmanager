@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<body>
+	<main class="container page page-addtask">
+		<h1>Create new task</h1>
+		<div class="form-wrap">
+			<form action="/projects/{{task.id}}/del" method="POST">
+				<p> Task creator's password <p>
+				<div class="form-input">
+					<label for="password" class="label">password:</label>
+					<input type="password" name="password" id="password" required />
+				</div>
+				<div class="btn-wrap">
+					<button class="btn">DELETE</button>
+				</div>
+			</div>
+		</form>
+	</main>
+{% endblock content %}

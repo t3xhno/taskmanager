@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+	<main class="container page page-project">
+		<section >
+			<h1>{{task.name}}</h1>
+			<label class="label underline">Description</label>
+			<p>{{task.desc}}</p>
+		</section>
+		<section class="section-task">
+			<div>
+				<label class="label underline">Users added to this task</label>
+				{% for user in users %}
+					<div class="user-info-wrap">
+						<div><b>Username:</b> {{user.username}}</div>
+						<div><b>Contact info:</b> {{user.contact}}</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div>
+				<label class="label underline"> Add person to task</label>
+				<div class="form-wrap">
+					<form action="/projects/{{task.id}}" method="POST">
+						<div class="form-input">
+							<label for="username" class="label">Username:</label>
+							<input type="text" name="username" id="username" required />
+						</div>
+						<div class="btn-wrap">
+							<button class="btn">Submit</button>
+						</div>
+					</form>
+                                <p><a href="/projects/{{task.id}}/del">DELETE TASK</a><p>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock content %}

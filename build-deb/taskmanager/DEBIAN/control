@@ -1,0 +1,11 @@
+Package: taskmanager
+Section: net
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 2000
+Depends: gunicorn, python3-flask-sqlalchemy
+Homepage: https://gitea.dmz.rs/Decentrala/taskmanager
+Maintainer: Decentrala <dmz@dmz.rs>
+Description: Interactive TODO list Web app
+Version: 1.0.10

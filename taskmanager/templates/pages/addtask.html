@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+	<main class="container page page-addtask">
+		<h1>Create new task</h1>
+		<div class="form-wrap">
+			<form action="/addtask" method="POST">
+				<div class="form-input">
+					<label for="taskname" class="label">Task name:</label>
+					<input type="text" name="taskname" id="taskname" required />
+				</div>
+				<div class="form-input">
+					<label for="taskdesc" class="label">Description:</label>
+					<input type="text" name="taskdesc" id="taskdesc" placeholder="optional"/>
+				</div>
+				<div class="form-input">
+					<label for="username" class="label">Username:</label>
+					<input type="text" name="username" id="username" placeholder="optional"/>
+				</div>
+				<div class="btn-wrap">
+					<button class="btn">Submit</button>
+				</div>
+			</div>
+		</form>
+	</main>
+{% endblock content %}
